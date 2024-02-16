@@ -27,16 +27,16 @@ const ProgressBar = ({ title, votes, maxVotes }: ProgressBarProps) => {
     <>
       <span
         className={cn(
-          'relative text-lg lg:text-xl',
+          'relative max-w-[100px] truncate text-ellipsis text-lg sm:max-w-[160px] lg:max-w-[220px] 2xl:max-w-[360px]',
           winner ? 'font-semibold text-primary' : 'font-medium',
         )}
       >
         {winner && (
           <div className="absolute -left-5 -top-1 animate-bounce">
-            <Trophy className="animate-shake h-5 w-5 -rotate-[30deg] text-yellow-600 dark:text-yellow-400" />
+            <Trophy className="h-5 w-5 -rotate-[30deg] animate-shake text-yellow-600 dark:text-yellow-400" />
           </div>
         )}
-        {title}
+        <span className="block truncate">{title}</span>
       </span>
 
       <Progress value={progress} max={max} />

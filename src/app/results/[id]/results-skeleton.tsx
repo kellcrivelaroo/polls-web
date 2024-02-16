@@ -2,14 +2,14 @@ import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 
-import ResultsHeader from './results-header'
+import HelperCard from './helper-card'
 
 const ResultsSkeleton = () => {
   return (
     <div className="custom-container">
-      <Card className="pt-4 lg:p-4">
-        <ResultsHeader />
-        <div className="px-4 lg:px-6">
+      <Card className="relative pt-12 lg:p-4 lg:pt-16">
+        <HelperCard />
+        <div className="px-4 pt-2 lg:px-6">
           <Skeleton className="mb-6 h-8 lg:h-12 lg:w-[80%]" />
           <div className="flex flex-col gap-4 px-2">
             {[1, 2, 3].map((_, index) => (

@@ -53,7 +53,10 @@ const OptionsForm = ({ id: pollId, options }: IPoll) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit(submit)} className="flex flex-col">
+      <form
+        onSubmit={handleSubmit(submit)}
+        className="flex flex-col overflow-hidden"
+      >
         <FormField
           control={control}
           name="optionId"
@@ -69,7 +72,7 @@ const OptionsForm = ({ id: pollId, options }: IPoll) => {
                 }}
               >
                 <RadioGroup
-                  className="mb-8 gap-4"
+                  className="mb-8 gap-2"
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
@@ -85,7 +88,7 @@ const OptionsForm = ({ id: pollId, options }: IPoll) => {
                       />
                       <Label
                         htmlFor={`option-${index}`}
-                        className="cursor-pointer text-xl transition-all lg:text-2xl"
+                        className="w-full max-w-full cursor-pointer py-2 text-xl transition-all hover:text-primary lg:text-2xl"
                       >
                         {title}
                       </Label>

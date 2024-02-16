@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={cn(
           'grid min-h-screen grid-rows-[auto_1fr_auto] bg-secondary font-sans font-medium antialiased dark:bg-background dark:font-normal',
@@ -44,6 +44,7 @@ export default function RootLayout({
             {children}
             <Toaster
               richColors
+              position="top-center"
               toastOptions={{
                 classNames: {
                   title: 'text-base lg:text-lg ml-2',

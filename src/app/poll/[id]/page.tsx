@@ -36,13 +36,13 @@ export default function Poll({ params: { id } }: PollProps) {
   return (
     <>
       <div className="custom-container">
-        <Card className="p-4">
-          <div className="mx-4 mb-8 border-b-2 border-primary px-4 pb-2 pt-4">
-            <span className="-ml-2 mb-1 text-muted-foreground">Enquete:</span>
-            <h1 className=" text-lg font-bold text-primary md:text-xl lg:text-2xl">
-              {poll.title}
-            </h1>
-          </div>
+        <Card className="relative overflow-hidden p-4">
+          <span className="absolute inset-0 h-fit w-fit rounded-br-full bg-secondary py-1.5 pl-4 pr-6 text-secondary-foreground">
+            Votar na enquete:
+          </span>
+          <h1 className="mx-4 mb-8 border-b-2 border-primary px-4 pb-2 pt-9 text-lg font-bold text-primary md:text-xl lg:text-2xl">
+            {poll.title}
+          </h1>
           <CardContent className="flex flex-col">
             <OptionsForm {...poll} />
           </CardContent>
