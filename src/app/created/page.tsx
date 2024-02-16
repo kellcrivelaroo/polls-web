@@ -15,9 +15,6 @@ import useCopyLink from '../hooks/useCopyLink'
 export default function NewPoll() {
   const params = useSearchParams()
   const pollId = params.get('pollId')
-  const router = useRouter()
-
-  if (typeof window !== 'undefined' && !pollId) router.push('/')
 
   const pollLink = `${pubEnv.BASE_URL}/poll/${pollId}`
   const resultsLink = `${pubEnv.BASE_URL}/results/${pollId}`
