@@ -2,7 +2,8 @@ import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 
 import { newPoll } from '@/actions/new-poll'
-import { NewPollForm } from '@/components/new-poll-form'
+
+import { NewPollForm } from '../(new-poll)/new-poll-form'
 
 const useNewPoll = () => {
   const router = useRouter()
