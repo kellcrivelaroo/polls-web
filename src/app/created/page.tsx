@@ -17,7 +17,7 @@ export default function NewPoll() {
   const pollId = params.get('pollId')
   const router = useRouter()
 
-  if (!pollId) router.push('/')
+  if (typeof window !== 'undefined' && !pollId) router.push('/')
 
   const pollLink = `${pubEnv.BASE_URL}/poll/${pollId}`
   const resultsLink = `${pubEnv.BASE_URL}/results/${pollId}`
