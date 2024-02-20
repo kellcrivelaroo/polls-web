@@ -4,9 +4,11 @@ import { useRouter } from 'next/navigation'
 import { newPoll } from '@/actions/new-poll'
 
 import { NewPollForm } from '../(new-poll)/new-poll-form'
+import useHeatingDb from './useHeatingDb'
 
 const useNewPoll = () => {
   const router = useRouter()
+  const { isHeating } = useHeatingDb()
 
   const { mutateAsync: createPoll, isPending } = useMutation({
     mutationFn: newPoll,
@@ -14,7 +16,7 @@ const useNewPoll = () => {
     onError: (error) => console.error(error),
   })
 
-  const submit = (data: NewPollForm) => {
+  const submit = async (data: NewPollForm) => {
     let options = [...data.mandatoryOptions]
     if (data.otherOptions.some((option) => option !== '')) {
       const fiteredOptions = data.otherOptions.filter((option) => option !== '')
@@ -25,7 +27,7 @@ const useNewPoll = () => {
       options,
     }
 
-    createPoll(newPollArray)
+    isHeating(createPoll(newPollArray))
   }
   const success = (id: string) => router.push(`/created?pollId=${id}`)
 
