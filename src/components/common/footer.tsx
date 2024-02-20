@@ -33,7 +33,7 @@ export type Social = (typeof socialMedias)[0]
 
 const Footer = () => {
   return (
-    <footer className="z-10 border-t bg-card/40 shadow backdrop-blur-lg dark:bg-card/70">
+    <footer className="fixed bottom-0 z-10 w-full border-t bg-card/40 shadow backdrop-blur-lg dark:bg-card/70">
       <div className="container flex items-center justify-center gap-6 py-5">
         {socialMedias.map((social) => (
           <SocialIcon key={social.id} social={social} />
