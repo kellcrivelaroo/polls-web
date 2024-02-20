@@ -1,5 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 import { newPoll } from '@/actions/new-poll'
 
@@ -14,7 +15,6 @@ const useNewPoll = () => {
     mutationFn: newPoll,
     onSuccess: (id) => success(id),
     onError: (error) => console.error(error),
-    retry: 3,
   })
 
   const submit = async (data: NewPollForm) => {
@@ -30,7 +30,10 @@ const useNewPoll = () => {
 
     isHeating(createPoll(newPollArray))
   }
-  const success = (id: string) => router.push(`/created?pollId=${id}`)
+  const success = (id: string) => {
+    router.push(`/created?pollId=${id}`)
+    toast.success('A votação está aberta!')
+  }
 
   return { submit, loading: isPending }
 }
