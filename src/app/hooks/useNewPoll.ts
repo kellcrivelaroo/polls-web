@@ -14,6 +14,7 @@ const useNewPoll = () => {
     mutationFn: newPoll,
     onSuccess: (id) => success(id),
     onError: (error) => console.error(error),
+    retry: 3,
   })
 
   const submit = async (data: NewPollForm) => {
