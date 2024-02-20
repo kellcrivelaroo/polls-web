@@ -7,7 +7,7 @@ import HelperCard from './helper-card'
 const ResultsSkeleton = () => {
   return (
     <div className="custom-container">
-      <Card className="relative pt-12 lg:p-4 lg:pt-16">
+      <Card className="relative overflow-hidden pt-12 lg:p-4 lg:pt-16">
         <HelperCard />
         <div className="px-4 pt-2 lg:px-6">
           <Skeleton className="mb-6 h-8 lg:h-12 lg:w-[80%]" />

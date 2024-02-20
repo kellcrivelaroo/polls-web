@@ -5,7 +5,10 @@ const PollSkeleton = () => {
   return (
     <div className="custom-container">
       <Card className="relative overflow-hidden p-4">
-        <span className="absolute inset-0 h-fit w-fit rounded-br-full bg-secondary py-1.5 pl-4 pr-6 text-secondary-foreground">
+        <span
+          className="absolute inset-0 h-fit w-fit rounded-br-full border-b border-r border-muted-foreground/20
+          bg-popover/80 py-1.5 pl-4 pr-6 text-secondary-foreground dark:bg-secondary"
+        >
           Votar na enquete:
         </span>
         <Skeleton className="mx-4 mb-8 mt-9 h-16" />

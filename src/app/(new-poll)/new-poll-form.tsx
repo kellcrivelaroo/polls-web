@@ -49,14 +49,20 @@ const NewPollForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-5">
-        <InfoError show={!!errors.title} message={errors.title?.message ?? ''}>
+        <InfoError
+          show={!!errors.title}
+          message={errors.title?.message ?? ''}
+          options={{ alignOffset: 40 }}
+        >
           <Input
             type="text"
             placeholder="Digite aqui sua questão"
             className={cn(
-              `mb-2 rounded-none border-b-2 border-l-0 border-r-0 border-t-0 bg-card text-lg 
+              `mb-2 rounded-none border-b-2 border-l-0 border-r-0 border-t-0 bg-transparent text-lg
           transition-colors focus-visible:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 lg:text-xl`,
-              question?.length ? 'border-primary/50' : 'border-border',
+              question?.length
+                ? 'border-primary/50'
+                : 'border-muted-foreground/50',
             )}
             {...register('title')}
           />

@@ -54,7 +54,7 @@ export default function Results({ params: { id } }: ResultsProps) {
 
   return (
     <div className="custom-container max-w-[100vw]">
-      <Card className="relative pt-12 lg:p-4 lg:pt-16">
+      <Card className="relative overflow-hidden pt-12 lg:p-4 lg:pt-16">
         <HelperCard />
 
         <h1 className="mb-8 ml-1 block truncate text-ellipsis text-wrap px-4 text-xl font-bold text-primary md:text-2xl lg:text-3xl">

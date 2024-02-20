@@ -8,7 +8,7 @@ export default function Home() {
       <Card>
         <CardHeader>
           <h1 className="pl-2 text-2xl font-bold text-primary lg:text-3xl">
-            Nova enquete
+            Crie sua enquete!
           </h1>
         </CardHeader>
         <CardContent>

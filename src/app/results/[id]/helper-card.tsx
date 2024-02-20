@@ -14,8 +14,8 @@ import {
 const HelperCard = () => {
   return (
     <span
-      className="absolute inset-0 flex h-fit w-fit items-center rounded-br-full bg-secondary py-1.5 pl-4 
-    pr-6 text-sm text-secondary-foreground md:text-base xl:text-lg"
+      className="absolute inset-0 flex h-fit w-fit items-center rounded-br-full border-b border-r border-muted-foreground/20 
+      bg-popover/80 py-1.5 pl-4 pr-6 text-sm text-secondary-foreground dark:bg-secondary md:text-base xl:text-lg"
     >
       <Globe className="mb-1 mr-1 h-5 w-5 animate-pulse" /> Resultado em
       <HoverCard openDelay={150} closeDelay={150}>

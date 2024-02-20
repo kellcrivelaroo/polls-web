@@ -5,6 +5,7 @@ import { Montserrat } from 'next/font/google'
 import { Toaster } from 'sonner'
 
 import Footer from '@/components/common/footer'
+import GlowingBackground from '@/components/common/glowing-background'
 import Header from '@/components/common/header'
 import ReactQueryProvider from '@/components/providers/react-query-provider'
 import ThemeProvider from '@/components/providers/theme-provider'
@@ -29,7 +30,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body
         className={cn(
-          'grid min-h-screen grid-rows-[auto_1fr_auto] bg-secondary font-sans font-medium antialiased dark:bg-background dark:font-normal',
+          'relative overflow-x-hidden font-sans font-medium antialiased dark:font-normal',
           fontSans.variable,
         )}
       >
@@ -40,8 +41,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            {children}
+            <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+            <GlowingBackground />
             <Toaster
               richColors
               position="top-center"
@@ -51,7 +56,6 @@ export default function RootLayout({
                 },
               }}
             />
-            <Footer />
           </ThemeProvider>
         </ReactQueryProvider>
       </body>

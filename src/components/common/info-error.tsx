@@ -37,7 +37,8 @@ const InfoError = ({
     <HoverCard openDelay={150} closeDelay={150} open={show}>
       <HoverCardTrigger>{children}</HoverCardTrigger>
       <HoverCardContent
-        className="relative w-fit px-4 py-2 text-sm text-secondary-foreground dark:bg-[#201e1c] dark:shadow-muted/50 lg:text-base"
+        className="relative w-fit px-4 py-2 text-sm text-secondary-foreground dark:bg-[#292724] 
+        dark:shadow-muted-foreground/10 lg:text-base"
         {...contentProps}
       >
         {message}
@@ -49,7 +50,7 @@ const InfoError = ({
         />
         <div
           className={cn(
-            'clip-polygon absolute -bottom-2.5 right-4 h-5 w-3 bg-popover dark:bg-[#201e1c]',
+            'clip-polygon absolute -bottom-2.5 right-4 h-5 w-3 bg-popover dark:bg-[#292724]',
             arrowSide === 'right' ? 'right-[15px]' : 'left-[16px]',
           )}
         />
