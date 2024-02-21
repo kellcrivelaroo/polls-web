@@ -7,7 +7,7 @@ const useHeatingDb = () => {
     })
 
     const heatingTooLong = new Promise((resolve) => {
-      setTimeout(resolve, 5000, 'heatingTooLong')
+      setTimeout(resolve, 7000, 'heatingTooLong')
     })
 
     return Promise.race([fn, heating]).then((value) => {
